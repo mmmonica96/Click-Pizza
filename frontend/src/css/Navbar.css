@@ -1,0 +1,44 @@
+.navbar {
+    background-color: #f4f1f5;
+    padding: 1rem 0;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Dropdown styles */
+/* Ocultar el menú desplegable por defecto */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/*Mostrar el menú solo cuando el mouse está sobre el padre*/
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*Estilo del contenedor del dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Opcional: estilo de los ítems dentro del desplegable */
+.dropdown-content li {
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+  
+  .dropdown-content li:hover {
+    background-color: #eee;
+  }
