@@ -21,25 +21,39 @@ export default function Navbar() {
         {/* Navigation menu */}
         <ul className={`navbar-list ${menuActive ? "active" : ""}`}>
           <li>
-            <Link to="/" onClick={closeMenu}>Inicio</Link>
+            <Link to="/" onClick={closeMenu}>
+              Inicio
+            </Link>
           </li>
           <li>
-            <Link to="/menus" onClick={closeMenu}>Menús</Link>
+            <Link to="/menus" onClick={closeMenu}>
+              Menús
+            </Link>
           </li>
           <li>
-            <Link to="/pizza" onClick={closeMenu}>Pizza</Link>
+            <Link to="/pizza" onClick={closeMenu}>
+              Pizza
+            </Link>
           </li>
           <li>
-            <Link to="/entrantes" onClick={closeMenu}>Entrantes</Link>
+            <Link to="/entrantes" onClick={closeMenu}>
+              Entrantes
+            </Link>
           </li>
           <li>
-            <Link to="/pasta" onClick={closeMenu}>Pasta</Link>
+            <Link to="/pasta" onClick={closeMenu}>
+              Pasta
+            </Link>
           </li>
           <li>
-            <Link to="/postres" onClick={closeMenu}>Postres</Link>
+            <Link to="/postres" onClick={closeMenu}>
+              Postres
+            </Link>
           </li>
           <li>
-            <Link to="/contacto" onClick={closeMenu}>Contacto</Link>
+            <Link to="/contacto" onClick={closeMenu}>
+              Contacto
+            </Link>
           </li>
         </ul>
 
@@ -62,14 +76,16 @@ export default function Navbar() {
             alt="icono de usuario"
             onClick={toggleUserMenu}
           />
-<<<<<<< HEAD
+
           {/*user menu*/}
-=======
->>>>>>> origin/maria
           {userMenuOpen && (
             <div className="user-dropdown">
-              <Link to="/registro" onClick={closeMenu}>Registrarse</Link>
-              <Link to="/login" onClick={closeMenu}>Iniciar sesión</Link>
+              <Link to="/registro" onClick={closeMenu}>
+                Registrarse
+              </Link>
+              <Link to="/login" onClick={closeMenu}>
+                Iniciar sesión
+              </Link>
             </div>
           )}
         </div>
