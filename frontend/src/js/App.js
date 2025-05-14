@@ -1,16 +1,23 @@
 // src/js/App.js
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import "../css/app.css";
-import Navbar from "./components/navbar";
-import Banner from "./components/banner";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import "../css/App.css";
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
 import PizzaApp from "./pizza/pizza";
-import { Link } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <main className="App-main">
-      <img src="/img/Ofertas.png" className="Banner-ofertas" alt="ofertas" />
+      <img
+        src="/img/Ofertas.png"
+        className="Banner-ofertas"
+        alt="ofertas"
+        onClick={() => navigate("/pizza")}
+        style={{ cursor: "pointer" }}
+      />
     </main>
   );
 }
