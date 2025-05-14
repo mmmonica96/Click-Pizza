@@ -1,8 +1,7 @@
-// src/index.js
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./js/App"; // ✅ Carga tu App.js correctamente
+import App from "./js/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 

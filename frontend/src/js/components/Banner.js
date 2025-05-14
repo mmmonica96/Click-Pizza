@@ -1,6 +1,5 @@
-import React from 'react';
-import '../../css/Banner.css';
-
+import React from "react";
+import "../../css/banner.css";
 
 export default function Banner() {
   return (
