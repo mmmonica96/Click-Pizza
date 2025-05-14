@@ -1,4 +1,3 @@
-
 .navbar {
   background-color: rgba(253, 245, 172, 0.795);
   padding: 8px 16px;
@@ -47,7 +46,6 @@
   color: rgb(0, 0, 0);
 }
 
-
 /* Hamburger icon */
 .navbar .menu-toggle {
   display: none;
@@ -61,12 +59,12 @@
   .navbar {
     height: auto;
   }
-  
+
   .navbar-container {
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   .navbar-list {
     display: none;
     flex-direction: column;
@@ -87,8 +85,7 @@
 
   .navbar-list li {
     margin: 10px 0;
-      justify-content: space-between;
-
+    justify-content: space-between;
   }
 
   .navbar .menu-toggle {
@@ -98,11 +95,26 @@
 
 .user-menu-container {
   position: relative;
-  margin-left: auto; /* Push to right */
+  margin-left: auto;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-
+/*icon*/
 .icono-user {
+  height: 50px;
+  width: 40px;
+  border-radius: 30%;
+}
+/*cart*/
+.cart-container {
+  height: 50px;
+  width: 40px;
+  border-radius: 30%;
+}
+/*cart img*/
+.cart-container img {
   height: 50px;
   width: 40px;
   border-radius: 30%;
