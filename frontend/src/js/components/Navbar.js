@@ -6,9 +6,6 @@ export default function Navbar() {
   const [menuActive, setMenuActive] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
-  //contador de productos en el carrito
-  // const [cartItemCount] = useState(3);
-
   const toggleMenu = () => setMenuActive((prev) => !prev);
   const toggleUserMenu = () => setUserMenuOpen((prev) => !prev);
   const closeMenu = () => setMenuActive(false);
@@ -24,27 +21,25 @@ export default function Navbar() {
         {/* Navigation menu */}
         <ul className={`navbar-list ${menuActive ? "active" : ""}`}>
           <li>
-            <a href="/">Inicio</a>
+            <Link to="/" onClick={closeMenu}>Inicio</Link>
           </li>
           <li>
-            <a href="#">Menús</a>
+            <Link to="/menus" onClick={closeMenu}>Menús</Link>
           </li>
           <li>
-            <Link to="./pizza" onClick={closeMenu}>
-              Pizza
-            </Link>
+            <Link to="/pizza" onClick={closeMenu}>Pizza</Link>
           </li>
           <li>
-            <a href="#">Entrantes</a>
+            <Link to="/entrantes" onClick={closeMenu}>Entrantes</Link>
           </li>
           <li>
-            <a href="#">Pasta</a>
+            <Link to="/pasta" onClick={closeMenu}>Pasta</Link>
           </li>
           <li>
-            <a href="#">Postres</a>
+            <Link to="/postres" onClick={closeMenu}>Postres</Link>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <Link to="/contacto" onClick={closeMenu}>Contacto</Link>
           </li>
         </ul>
 
@@ -57,10 +52,6 @@ export default function Navbar() {
                 className="icono-cart"
                 alt="carrito"
               />
-              {/*posible contador de carrito */}
-              {/* {cartCounter > 0 && (
-                <span className="cart-count">{cartCounter}</span>
-              )} */}
             </Link>
           </div>
 
@@ -71,11 +62,14 @@ export default function Navbar() {
             alt="icono de usuario"
             onClick={toggleUserMenu}
           />
+<<<<<<< HEAD
           {/*user menu*/}
+=======
+>>>>>>> origin/maria
           {userMenuOpen && (
             <div className="user-dropdown">
-              <a href="#">Registrarse</a>
-              <a href="#">Iniciar sesión</a>
+              <Link to="/registro" onClick={closeMenu}>Registrarse</Link>
+              <Link to="/login" onClick={closeMenu}>Iniciar sesión</Link>
             </div>
           )}
         </div>
