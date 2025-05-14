@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../css/Navbar.css';
 
 export default function Navbar() {
@@ -7,6 +8,9 @@ export default function Navbar() {
 
   const toggleMenu = () => setMenuActive(prev => !prev);
   const toggleUserMenu = () => setUserMenuOpen(prev => !prev);
+   const closeMenu = () => {
+    setMenuActive(false);
+  };
 
   return (
     <nav className={`navbar ${menuActive ? 'active' : ''}`}>
@@ -19,7 +23,7 @@ export default function Navbar() {
         {/* Navigation menu */}
         <ul className={`navbar-list ${menuActive ? 'active' : ''}`}>
           <li><a href="#">Menús</a></li>
-          <li><a href="#">Pizza</a></li>
+          <li><Link to="./pizza" onClick={closeMenu}>Pizza</Link></li>
           <li><a href="#">Entrantes</a></li>
           <li><a href="#">Pasta</a></li>
           <li><a href="#">Postres</a></li>
