@@ -51,7 +51,7 @@ export default function Navbar() {
             alt="icon"
             onClick={toggleUserMenu}
           />
-          /*user menu*/
+           {/*user menu*/}
           {userMenuOpen && (
             <div className="user-dropdown">
               <a href="#">Registrarse</a>
