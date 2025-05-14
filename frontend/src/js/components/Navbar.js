@@ -6,14 +6,12 @@ export default function Navbar() {
   const [menuActive, setMenuActive] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuActive((prev) => !prev);
-  const toggleUserMenu = () => setUserMenuOpen((prev) => !prev);
+  //contador de productos en el carrito
+  // const [cartItemCount] = useState(3);
 
   const toggleMenu = () => setMenuActive((prev) => !prev);
   const toggleUserMenu = () => setUserMenuOpen((prev) => !prev);
-  const closeMenu = () => {
-    setMenuActive(false);
-  };
+  const closeMenu = () => setMenuActive(false);
 
   return (
     <nav className={`navbar ${menuActive ? "active" : ""}`}>
@@ -47,17 +45,28 @@ export default function Navbar() {
           </li>
         </ul>
 
+        {/* Cart & User Menu */}
         <div className="user-menu-container">
-          {/* cart */}
+          {/* Cart */}
           <div className="cart-container">
-            <img src="/img/carrito.png" className="icono-cart" alt="cart" />
+            <Link to="/cart">
+              <img
+                src="/img/carrito.png"
+                className="icono-cart"
+                alt="carrito"
+              />
+              {/*posible contador de carrito */}
+              {/* {cartCounter > 0 && (
+                <span className="cart-count">{cartCounter}</span>
+              )} */}
+            </Link>
           </div>
 
-          {/* account */}
+          {/* Account */}
           <img
             src="/img/icon-user.png"
             className="icono-user"
-            alt="icon"
+            alt="icono de usuario"
             onClick={toggleUserMenu}
           />
 
