@@ -1,9 +1,9 @@
-// src/js/App.js
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import "../css/App.css";
-import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
+import { Link } from "react-router-dom";
+import "../css/app.css";
+import Navbar from "./components/navbar";
+import Banner from "./components/banner";
 import PizzaApp from "./pizza/pizza";
 
 function Home() {
@@ -37,7 +37,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pizza/pizza" element={<PizzaApp />} />
+        <Route path="/pizza" element={<PizzaApp />} />
       </Routes>
     </div>
   );
