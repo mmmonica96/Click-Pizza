@@ -48,9 +48,8 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Cart & User Menu */}
         <div className="user-menu-container">
-          {/* Cart */}
+          {/*cart */}
           <div className="cart-container">
             <Link to="/cart">
               <img
@@ -65,14 +64,14 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Account */}
+          {/*account */}
           <img
             src="/img/icon-user.png"
             className="icono-user"
             alt="icono de usuario"
             onClick={toggleUserMenu}
           />
-           {/*user menu*/}
+          {/*user menu*/}
           {userMenuOpen && (
             <div className="user-dropdown">
               <a href="#">Registrarse</a>
