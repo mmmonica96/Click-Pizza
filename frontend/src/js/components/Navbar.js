@@ -69,7 +69,7 @@ export default function Navbar() {
             alt="icono de usuario"
             onClick={toggleUserMenu}
           />
-
+          /*user menu*/
           {userMenuOpen && (
             <div className="user-dropdown">
               <a href="#">Registrarse</a>
