@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import '../css/App.css';
 import Navbar from './components/Navbar';
 import Banner from './components/Banner';
+import PizzaApp from './pizza/pizza';
 
 
 function App() {
@@ -17,7 +19,10 @@ function App() {
       <main className="App-main" >        
   <img src="/img/Ofertas.png" className="Banner-ofertas" alt="ofertas" />
 </main>
-
+ <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/pizza" element={<PizzaApp />} />
+        </Routes>
     </div>
   );
 }
