@@ -24,6 +24,9 @@ export default function Navbar() {
         {/* Navigation menu */}
         <ul className={`navbar-list ${menuActive ? "active" : ""}`}>
           <li>
+            <a href="/">Inicio</a>
+          </li>
+          <li>
             <a href="#">Menús</a>
           </li>
           <li>
