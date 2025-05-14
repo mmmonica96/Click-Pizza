@@ -1,0 +1,112 @@
+/* === RESET & BASE === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffaf3;
+  color: #2f2f2f;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+/* === CARD STYLING === */
+.pizza-card {
+  background: linear-gradient(to bottom right, #fff8e1, #ffe0b2);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(255, 170, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pizza-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(255, 145, 0, 0.3);
+}
+
+.pizza-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d97706;
+}
+
+/* === BUTTONS === */
+.btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-order {
+  background-color: #f97316;
+  color: white;
+}
+
+.btn-order:hover {
+  background-color: #ea580c;
+}
+
+.btn-ingredients {
+  background-color: #fb923c;
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.btn-ingredients:hover {
+  background-color: #f97316;
+}
+
+/* === RATINGS === */
+.rating {
+  display: flex;
+  align-items: center;
+  background-color: #fb923c;
+  color: white;
+  border-radius: 8px;
+  padding: 0.3rem 0.7rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.rating .stars {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+.star-filled {
+  color: gold;
+}
+
+.star-empty {
+  color: #d1d5db;
+}
+
+
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .pizza-name {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .btn-ingredients {
+    margin-left: 0;
+  }
+}

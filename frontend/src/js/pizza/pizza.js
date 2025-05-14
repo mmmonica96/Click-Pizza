@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
+import "../../css/pizza.css"
 export default function PizzaApp() {
   const [cart, setCart] = useState([]);
 
@@ -69,15 +70,6 @@ export default function PizzaApp() {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-amber-100 py-4">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-amber-800">
-            © 2025 Click & Pizza - Todos los derechos reservados
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

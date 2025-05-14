@@ -5,6 +5,7 @@ import "../css/app.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
 import PizzaApp from "./pizza/pizza";
+import Footer from "./components/footer";
 
 function Home() {
   const navigate = useNavigate();
@@ -39,7 +40,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pizza" element={<PizzaApp />} />
       </Routes>
+         
+    
+          <div className="Footer"><Footer /></div>
     </div>
+   
+
   );
 }
 
