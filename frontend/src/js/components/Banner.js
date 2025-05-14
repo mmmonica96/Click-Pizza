@@ -1,13 +1,11 @@
-// Banner.jsx
 import React from 'react';
+import '../../css/Banner.css';
 
-function Banner() {
+
+export default function Banner() {
   return (
     <div className="banner">
-      <h1>Bienvenido a Click Pizza</h1>
+      <img src="/img/banner.png" alt="Banner Click&Pizza" />
     </div>
   );
 }
-
-export default Banner;
-
