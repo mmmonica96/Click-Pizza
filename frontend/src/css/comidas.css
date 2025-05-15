@@ -1,7 +1,7 @@
 /* === RESET & BASE === */
 .pizza.body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #fffaf3;
   color: #2f2f2f;
 }
@@ -15,9 +15,9 @@
   gap: 20px;
 }
 
-
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 600;
 }
 
@@ -32,7 +32,6 @@ h1, h2, h3 {
   align-items: center;
   padding: 1rem;
   text-align: center;
-  right: 100px;
 }
 
 .pizza-card:hover {
@@ -45,8 +44,6 @@ h1, h2, h3 {
   font-weight: bold;
   color: #d97706;
 }
-
-
 
 /* === BUTTONS === */
 .btn {
@@ -108,8 +105,6 @@ h1, h2, h3 {
   color: #d1d5db;
 }
 
-
-
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   .pizza-name {
@@ -127,21 +122,19 @@ h1, h2, h3 {
 }
 @media (max-width: 768px) {
   .pizza.container {
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 480px) {
   .pizza.container {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
 
 /* === Images === */
-
-.imagen-pizza{
-  width: 400px;
+.imagen-pizza {
+  width: 300px;
   height: 350px;
   border-radius: 20px;
 }
-
