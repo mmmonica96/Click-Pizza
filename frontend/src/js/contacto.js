@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './opinion.css'; 
+import '../css/contacto.css'; 
 
-export default function opinion() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
