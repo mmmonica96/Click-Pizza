@@ -1,8 +1,68 @@
-/* style for the banner block*/
+/* style for the banner block */
 .app-main {
   min-height: 60vh;
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  background-color: #fff;
+}
+
+/*container for all promotions */
+.ofertas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*individual promotion card */
+.oferta-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.oferta-card:hover {
+  transform: scale(1.03);
+}
+
+/*promotion image */
+.oferta-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/*info section */
+.oferta-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.oferta-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #d32f2f;
+}
+
+.oferta-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  white-space: pre-line;
+}
+
+.oferta-precio {
+  font-weight: bold;
+  color: #388e3c;
+  font-size: 1rem;
 }
