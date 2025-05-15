@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "short_name": "Click&Pizza",
+=======
+  "short_name": "React App",
+>>>>>>> origin/carmen
   "name": "Create React App Sample",
   "icons": [
     {
