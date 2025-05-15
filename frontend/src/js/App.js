@@ -1,17 +1,11 @@
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import "../css/app.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
-import PizzaApp from "./comidas/pizza";
-import Footer from "./components/footer";
-import RegisterForm from "./register/registerform";
-import EntrantesApp from "./comidas/entrantes";
-import PastaApp from "./comidas/pasta";
-import PostreApp from "./comidas/postres";
-import Contact from "./contacto";
-import Login from "./login";
+import PizzaApp from "./pizza/pizza";
+import { Link } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
@@ -28,6 +22,19 @@ function Home() {
     </main>
   );
 }
+=======
+import { Link } from "react-router-dom";
+import "../css/app.css";
+import Navbar from "./components/navbar";
+import Banner from "./components/banner";
+import PizzaApp from "./comidas/pizza";
+import Footer from "./components/footer";
+import RegisterForm from "./register/registerform";
+import EntrantesApp from "./comidas/entrantes";
+import PastaApp from "./comidas/pasta";
+import PostreApp from "./comidas/postres";
+import Home from "./init";
+>>>>>>> origin/monica
 
 function App() {
   return (
@@ -45,13 +52,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pizza" element={<PizzaApp />} />
+<<<<<<< HEAD
+=======
         <Route path="/entrantes" element={<EntrantesApp />} />
         <Route path="/pasta" element={<PastaApp />} />
         <Route path="/postres" element={<PostreApp />} />
         <Route path="/contacto" element={<Contact />} />
 
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<Login />} />
+>>>>>>> origin/monica
       </Routes>
 
       <div className="Footer">
