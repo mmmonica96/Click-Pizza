@@ -1,6 +1,6 @@
 // src/js/App.js
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "../css/app.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
@@ -38,7 +38,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pizza/pizza" element={<PizzaApp />} />
+        <Route path="/pizza" element={<PizzaApp />} />
       </Routes>
     </div>
   );

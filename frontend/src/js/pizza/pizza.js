@@ -1,6 +1,8 @@
+// src/js/pizza/pizza.js
 import { useState } from "react";
+import { Star } from "lucide-react";
 
-export default function PizzaApp() {
+function PizzaApp() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (pizza) => {
@@ -81,3 +83,5 @@ export default function PizzaApp() {
     </div>
   );
 }
+
+export default PizzaApp;
