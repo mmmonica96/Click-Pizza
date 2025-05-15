@@ -1,9 +1,10 @@
 /* === FOOTER === */
 footer {
-  background-color: #fff3cd;
-  color: #92400e;
+  background-color: rgba(253, 245, 172, 0.795);
+  color: #000000;
   padding: 1rem;
   text-align: center;
   font-size: 0.9rem;
-  border-top: 1px solid #ffd699;
+  box-shadow: 0 1px 6px rgba(248, 184, 123, 0.493);
+  width: 100%;
 }

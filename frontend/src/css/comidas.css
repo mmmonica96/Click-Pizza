@@ -1,15 +1,21 @@
 /* === RESET & BASE === */
-body {
+.pizza.body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #fffaf3;
   color: #2f2f2f;
 }
 
-.container {
-  max-width: 1200px;
+.comida-container {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
+
+
 
 h1, h2, h3 {
   font-weight: 600;
@@ -21,6 +27,12 @@ h1, h2, h3 {
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(255, 170, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  right: 100px;
 }
 
 .pizza-card:hover {
@@ -33,6 +45,8 @@ h1, h2, h3 {
   font-weight: bold;
   color: #d97706;
 }
+
+
 
 /* === BUTTONS === */
 .btn {
@@ -62,6 +76,7 @@ h1, h2, h3 {
   color: white;
   font-size: 0.875rem;
   padding: 0.4rem 0.8rem;
+  margin-left: 10px;
 }
 
 .btn-ingredients:hover {
@@ -110,3 +125,23 @@ h1, h2, h3 {
     margin-left: 0;
   }
 }
+@media (max-width: 768px) {
+  .pizza.container {
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+@media (max-width: 480px) {
+  .pizza.container {
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* === Images === */
+
+.imagen-pizza{
+  width: 400px;
+  height: 350px;
+  border-radius: 20px;
+}
+
