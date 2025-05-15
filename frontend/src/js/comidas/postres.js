@@ -1,69 +1,61 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import "../../css/comidas.css";
 
 export default function PostreApp() {
   const [cart, setCart] = useState([]);
+  const [postres, setPostres] = useState([]);
 
-  const addToCart = (pizza) => {
-    setCart([...cart, pizza]);
-    alert(`${pizza.name} ¡añadida al carrito!`);
+  useEffect(() => {
+    fetch("http://localhost/Click-Pizza/backend/connection/controller.php?action=getPostres")
+      .then((res) => res.json())
+      .then((data) => setPostres(data))
+      .catch((err) => console.error("Error al cargar postres:", err));
+  }, []);
+
+  const addToCart = (producto) => {
+    setCart([...cart, producto]);
+    alert(`${producto.nombre} ¡añadido al carrito!`);
   };
-
-  const pizzas = [
-    { id: 1, name: "Tiramisu", rating: 3, price: 12.99, image: "../img/postres/tiramisu.jpg" },
-    { id: 2, name: "Helado de Vainilla", rating: 4, price: 14.99, image: "../img/postres/helado_vainilla.jpg" },
-    { id: 3, name: "Flan de huevo", rating: 3, price: 13.99, image: "../img/postres/flan.jpg" },
-    { id: 4, name: "Tarta de Queso", rating: 5, price: 16.99, image: "../img/postres/tarta_queso.jpg" },
-  ];
 
   return (
     <div className="comida-container">
-        {pizzas.map((pizza) => (
-          <div key={pizza.id} className="pizza-card p-4 flex flex-col items-center">
-            {/* Imagen */}
-            <img
-              src={pizza.image}
-              alt={pizza.name}
-              className="imagen-pizza"
-            />
+      {postres.map((producto) => (
+        <div key={producto.id} className="pizza-card p-4 flex flex-col items-center">
+          <img
+            src={`/img/postres/${producto.imagen}`}
+            alt={producto.nombre}
+            className="imagen-pizza"
+          />
+          <span className="pizza-name mb-2 text-center">{producto.nombre}</span>
 
-            {/* Nombre */}
-            <span className="pizza-name mb-2 text-center">{pizza.name}</span>
+          <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
+            <button
+              onClick={() => addToCart(producto)}
+              className="btn btn-order"
+            >
+              Pedir
+            </button>
 
-            {/* Botones */}
-            <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
-              <button
-                onClick={() => addToCart(pizza)}
-                className="btn btn-order"
-              >
-                Pedir
-              </button>
+            <button className="btn btn-ingredients">
+              Añadir ingredientes
+            </button>
+          </div>
 
-              {pizza.id  && (
-                <button className="btn btn-ingredients">
-                  Añadir ingredientes
-                </button>
-              )}
-            </div>
-
-            {/* Opiniones */}
-            <div className="rating">
-              <span>Opiniones</span>
-              <div className="stars">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star
-                    key={star}
-                    size={16}
-                    className={
-                      star <= pizza.rating ? "star-filled" : "star-empty"
-                    }
-                  />
-                ))}
-              </div>
+          <div className="rating">
+            <span>Opiniones</span>
+            <div className="stars">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star
+                  key={star}
+                  size={16}
+                  className={star <= (producto.rating || 0) ? "star-filled" : "star-empty"}
+                />
+              ))}
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </div>
   );
 }
