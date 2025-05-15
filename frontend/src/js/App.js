@@ -10,24 +10,7 @@ import RegisterForm from "./register/registerform";
 import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
-
-
-
-function Home() {
-  const navigate = useNavigate();
-
-  return (
-    <main className="App-main">
-      <img
-        src="/img/Ofertas.png"
-        className="Banner-ofertas"
-        alt="ofertas"
-        onClick={() => navigate("/pizza")}
-        style={{ cursor: "pointer" }}
-      />
-    </main>
-  );
-}
+import Home from "./init";
 
 function App() {
   return (
@@ -46,18 +29,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pizza" element={<PizzaApp />} />
         <Route path="/entrantes" element={<EntrantesApp />} />
-        <Route path="/pasta" element={<PastaApp/>} />
-        <Route path="/postres" element={<PostreApp/>} />
+        <Route path="/pasta" element={<PastaApp />} />
+        <Route path="/postres" element={<PostreApp />} />
 
         <Route path="/register" element={<RegisterForm />} />
-
       </Routes>
-         
-    
-          <div className="Footer"><Footer /></div>
-    </div>
-   
 
+      <div className="Footer">
+        <Footer />
+      </div>
+    </div>
   );
 }
 
