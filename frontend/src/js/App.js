@@ -11,6 +11,7 @@ import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
 import Home from "./init";
 import Contact from "./contacto";
+import Login from "./login";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
         <Route path="/contacto" element={<Contact />} />
 
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<Login />} />
+
       </Routes>
 
       <div className="Footer">
