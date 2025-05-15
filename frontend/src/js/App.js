@@ -10,6 +10,8 @@ import RegisterForm from "./register/registerform";
 import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
+import Contact from "./contacto";
+import Login from "./login";
 
 
 
@@ -48,8 +50,12 @@ function App() {
         <Route path="/entrantes" element={<EntrantesApp />} />
         <Route path="/pasta" element={<PastaApp/>} />
         <Route path="/postres" element={<PostreApp/>} />
+        <Route path="/contacto" element={<Contact />} />
+
 
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<Login />} />
+
 
       </Routes>
          

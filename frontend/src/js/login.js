@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './login.css'; 
+import '../css/login/login.css'; 
 
-export default function login() {
+export default function Login() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -27,7 +27,7 @@ export default function login() {
     <div className="login-App">
       <main className="login-container">
         <form onSubmit={handleSubmit} className="form-card">
-          <h2 className="text-2xl font-bold mb-4 text-orange-600">Inicia Sesión</h2>
+          <h2 className="titulo">Inicia Sesión</h2>
 
           <label>Correo electrónico</label>
           <input
@@ -35,6 +35,7 @@ export default function login() {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder="correo@ejemplo.com"
             required
           />
 
@@ -44,6 +45,7 @@ export default function login() {
             name="password"
             value={formData.password}
             onChange={handleChange}
+            placeholder="••••••••"
             required
           />
 
@@ -52,10 +54,6 @@ export default function login() {
           {enviado && <p className="success-message">¡Inicio de sesión exitoso!</p>}
         </form>
       </main>
-
-      <footer className="login-footer">
-        © 2025 Click & Pizza - Bienvenido de nuevo
-      </footer>
     </div>
   );
 }
