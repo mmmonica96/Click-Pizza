@@ -1,29 +1,5 @@
 import React from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-import "../css/app.css";
-import Navbar from "./components/navbar";
-import Banner from "./components/banner";
-import PizzaApp from "./pizza/pizza";
-import { Link } from "react-router-dom";
-
-function Home() {
-  const navigate = useNavigate();
-
-  return (
-    <main className="App-main">
-      <img
-        src="/img/Ofertas.png"
-        className="Banner-ofertas"
-        alt="ofertas"
-        onClick={() => navigate("/pizza")}
-        style={{ cursor: "pointer" }}
-      />
-    </main>
-  );
-}
-=======
-import { Link } from "react-router-dom";
+import { Routes, Route, useNavigate, Link } from "react-router-dom"; // Añadido Link aquí
 import "../css/app.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
@@ -34,7 +10,7 @@ import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
 import Home from "./init";
->>>>>>> origin/monica
+import Contact from "./contacto";
 
 function App() {
   return (
@@ -52,15 +28,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pizza" element={<PizzaApp />} />
-<<<<<<< HEAD
-=======
+
         <Route path="/entrantes" element={<EntrantesApp />} />
         <Route path="/pasta" element={<PastaApp />} />
         <Route path="/postres" element={<PostreApp />} />
         <Route path="/contacto" element={<Contact />} />
 
         <Route path="/register" element={<RegisterForm />} />
->>>>>>> origin/monica
       </Routes>
 
       <div className="Footer">
