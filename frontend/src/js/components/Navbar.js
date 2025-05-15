@@ -80,7 +80,7 @@ export default function Navbar() {
           {/*user menu*/}
           {userMenuOpen && (
             <div className="user-dropdown">
-              <Link to="/registro" onClick={closeMenu}>
+              <Link to="/register" onClick={closeMenu}>
                 Registrarse
               </Link>
               <Link to="/login" onClick={closeMenu}>
