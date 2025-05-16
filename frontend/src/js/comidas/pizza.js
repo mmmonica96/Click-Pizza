@@ -24,11 +24,11 @@ export default function PizzaApp() {
       {pizzas.map((pizza) => (
         <div key={pizza.id} className="pizza-card p-4 flex flex-col items-center">
           <img
-            src={`/img/pizzas/${pizza.imagen}`}
-            alt={pizza.nombre}
+            src={`/img/pizzas/${pizza.img}`}
+            alt={pizza.name}
             className="imagen-pizza"
           />
-          <span className="pizza-name mb-2 text-center">{pizza.nombre}</span>
+          <span className="pizza-name mb-2 text-center">{pizza.name}</span>
 
           <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
             <button

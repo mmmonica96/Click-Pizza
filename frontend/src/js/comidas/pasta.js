@@ -23,11 +23,11 @@ export default function PastaApp() {
       {pastas.map((producto) => (
         <div key={producto.id} className="pizza-card p-4 flex flex-col items-center">
           <img
-            src={`/img/pasta/${producto.imagen}`}
-            alt={producto.nombre}
+            src={`/img/pasta/${producto.img}`}
+            alt={producto.name}
             className="imagen-pizza"
           />
-          <span className="pizza-name mb-2 text-center">{producto.nombre}</span>
+          <span className="pizza-name mb-2 text-center">{producto.name}</span>
 
           <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
             <button

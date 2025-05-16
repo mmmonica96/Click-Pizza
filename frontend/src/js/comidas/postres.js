@@ -9,13 +9,19 @@ export default function PostreApp() {
   useEffect(() => {
     fetch("http://localhost/Click-Pizza/backend/connection/controller.php?action=getPostres")
       .then((res) => res.json())
-      .then((data) => setPostres(data))
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setPostres(data);
+        } else {
+          console.error("Respuesta inesperada:", data);
+        }
+      })
       .catch((err) => console.error("Error al cargar postres:", err));
   }, []);
 
   const addToCart = (producto) => {
     setCart([...cart, producto]);
-    alert(`${producto.nombre} ¡añadido al carrito!`);
+    alert(`${producto.name} ¡añadido al carrito!`);
   };
 
   return (
@@ -23,11 +29,11 @@ export default function PostreApp() {
       {postres.map((producto) => (
         <div key={producto.id} className="pizza-card p-4 flex flex-col items-center">
           <img
-            src={`/img/postres/${producto.imagen}`}
-            alt={producto.nombre}
+            src={`/img/postres/${producto.img}`}
+            alt={producto.name}
             className="imagen-pizza"
           />
-          <span className="pizza-name mb-2 text-center">{producto.nombre}</span>
+          <span className="pizza-name mb-2 text-center">{producto.name}</span>
 
           <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
             <button

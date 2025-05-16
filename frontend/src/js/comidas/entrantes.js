@@ -15,7 +15,7 @@ export default function EntrantesApp() {
 
   const addToCart = (producto) => {
     setCart([...cart, producto]);
-    alert(`${producto.nombre} ¡añadido al carrito!`);
+    alert(`${producto.name} ¡añadido al carrito!`);
   };
 
   return (
@@ -23,11 +23,11 @@ export default function EntrantesApp() {
       {entrantes.map((producto) => (
         <div key={producto.id} className="pizza-card p-4 flex flex-col items-center">
           <img
-            src={`/img/entrantes/${producto.imagen}`}
-            alt={producto.nombre}
+            src={`/img/entrantes/${producto.img}`}
+            alt={producto.name}
             className="imagen-pizza"
           />
-          <span className="pizza-name mb-2 text-center">{producto.nombre}</span>
+          <span className="pizza-name mb-2 text-center">{producto.name}</span>
 
           <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
             <button

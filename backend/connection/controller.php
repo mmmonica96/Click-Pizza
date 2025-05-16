@@ -20,7 +20,7 @@ switch ($_GET['action']) {
 
     case 'getPizzas':
         try {
-            $stmt = $pdo->query("SELECT id, nombre, ingredientes, precio, imagen FROM pizza");
+            $stmt = $pdo->query("SELECT id, name, price, img FROM pizza");
             $pizzas = $stmt->fetchAll();
             echo json_encode($pizzas);
         } catch (PDOException $e) {
@@ -31,7 +31,7 @@ switch ($_GET['action']) {
 
     case 'getEntrantes':
         try {
-            $stmt = $pdo->query("SELECT id, nombre, descripcion, precio, imagen FROM entrantes");
+            $stmt = $pdo->query("SELECT id, name, description, price, img FROM appetiser");
             $entrantes = $stmt->fetchAll();
             echo json_encode($entrantes);
         } catch (PDOException $e) {
@@ -42,7 +42,7 @@ switch ($_GET['action']) {
 
     case 'getPastas':
         try {
-            $stmt = $pdo->query("SELECT id, nombre, descripcion, precio, imagen FROM pasta");
+            $stmt = $pdo->query("SELECT id, name, ingredients, price, img FROM paste");
             $pastas = $stmt->fetchAll();
             echo json_encode($pastas);
         } catch (PDOException $e) {
@@ -52,15 +52,15 @@ switch ($_GET['action']) {
         break;
 
     case 'getPostres':
-        try {
-            $stmt = $pdo->query("SELECT id, nombre, descripcion, precio, imagen FROM postres");
-            $postres = $stmt->fetchAll();
-            echo json_encode($postres);
-        } catch (PDOException $e) {
-            http_response_code(500);
-            echo json_encode(["error" => "Error al obtener postres: " . $e->getMessage()]);
-        }
-        break;
+    try {
+        $stmt = $pdo->query("SELECT id, name, price, img FROM dessert");
+        $postres = $stmt->fetchAll();
+        echo json_encode($postres);
+    } catch (PDOException $e) {
+        http_response_code(500);
+        echo json_encode(["error" => "Error al obtener postres: " . $e->getMessage()]);
+    }
+    break;
 
     default:
         http_response_code(400);
