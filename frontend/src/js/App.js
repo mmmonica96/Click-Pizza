@@ -13,7 +13,6 @@ import PostreApp from "./comidas/postres";
 import Home from "./init"; // ✅ usamos este
 import Login from "./login";
 import Contact from "./contacto";
-import Login from "./login";
 function App() {
   return (
     <div className="App">
@@ -35,7 +34,6 @@ function App() {
         <Route path="/postres" element={<PostreApp />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contacto" element={<Contact />} />
       </Routes>
