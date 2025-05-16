@@ -11,9 +11,6 @@ import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
 import Home from "./init";
-import Contact from "./contacto";
-import Login from "./login";
-import Home from "./init"; // ✅ usamos este
 import Login from "./login";
 import Contact from "./contacto";
 
@@ -22,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="logo-banner-container">
-          <Link to="/comidas/pizza">
+          <Link to="/pizza">
             <img src="/img/logo.png" className="App-logo" alt="logo" />
           </Link>
           <Banner />
@@ -36,9 +33,10 @@ function App() {
         <Route path="/entrantes" element={<EntrantesApp />} />
         <Route path="/pasta" element={<PastaApp />} />
         <Route path="/postres" element={<PostreApp />} />
-        <Route path="/contacto" element={<Contact />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/contacto" element={<Contact />} />
+        <Route path="/register" element={<RegisterForm />} />
       </Routes>
 
       <div className="Footer">
