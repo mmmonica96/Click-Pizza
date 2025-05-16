@@ -1,6 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Routes, Route, useNavigate, Link } from "react-router-dom"; // Añadido Link aquí
 import "../css/app.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
@@ -10,14 +9,16 @@ import RegisterForm from "./register/registerform";
 import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
-import Home from "./init"; // ✅ usamos este
+import Home from "./init";
+import Contact from "./contacto";
+import Login from "./login";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <div className="logo-banner-container">
-          <Link to="/pizza">
+          <Link to="/comidas/pizza">
             <img src="/img/logo.png" className="App-logo" alt="logo" />
           </Link>
           <Banner />
@@ -28,10 +29,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pizza" element={<PizzaApp />} />
+
         <Route path="/entrantes" element={<EntrantesApp />} />
         <Route path="/pasta" element={<PastaApp />} />
         <Route path="/postres" element={<PostreApp />} />
+        <Route path="/contacto" element={<Contact />} />
+
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<Login />} />
+
       </Routes>
 
       <div className="Footer">

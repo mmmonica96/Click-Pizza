@@ -1,0 +1,60 @@
+.pizza-builder {
+  min-height: 100vh;
+  background-color: #fef3c7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.pizza-container {
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  margin-bottom: 1rem;
+}
+
+.pizza-base {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.ingredient {
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ingredients-selector {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0.5rem;
+}
+
+.ingredient-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  background-color: white;
+  cursor: pointer;
+}
+
+.ingredient-button:hover {
+  background-color: #fde68a;
+}
+
+.ingredient-button.selected {
+  background-color: #34d399;
+  color: white;
+}
