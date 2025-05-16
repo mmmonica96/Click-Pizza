@@ -1,19 +1,4 @@
 <?php
-<<<<<<< HEAD
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "clickpizza";
-
-//create connection
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-//verify connection
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-?>
-=======
 $host = 'localhost';
 $dbname = 'clickpizza'; // o click_pizza si no permite &
 $username = 'root';
@@ -26,4 +11,3 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 ?>
->>>>>>> origin/maria

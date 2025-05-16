@@ -29,6 +29,12 @@ export default function EntrantesApp() {
           />
           <span className="pizza-name mb-2 text-center">{producto.name}</span>
 
+           {/* Precio */}
+          <span className="precio-texto">
+            {Number(producto.price).toFixed(2)} €
+          </span>
+
+
           <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
             <button
               onClick={() => addToCart(producto)}
