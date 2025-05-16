@@ -10,9 +10,14 @@ import RegisterForm from "./register/registerform";
 import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
+<<<<<<< HEAD
 import Home from "./init"; // ✅ usamos este
 import Login from "./login";
 
+=======
+import Home from "./init";
+import Contact from "./contacto";
+>>>>>>> origin/monica
 function App() {
   return (
     <div className="App">
@@ -33,7 +38,11 @@ function App() {
         <Route path="/pasta" element={<PastaApp />} />
         <Route path="/postres" element={<PostreApp />} />
         <Route path="/register" element={<RegisterForm />} />
+<<<<<<< HEAD
         <Route path="/login" element={<Login />} />
+=======
+        <Route path="/contacto" element={<Contact />} />
+>>>>>>> origin/monica
       </Routes>
 
       <div className="Footer">

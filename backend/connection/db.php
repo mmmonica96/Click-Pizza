@@ -1,6 +1,10 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/monica
 $host = 'localhost';
-$dbname = 'clickpizza'; // o click_pizza si no permite &
+$dbname = 'clickpizza';
 $username = 'root';
 $password = '';
 
@@ -10,4 +14,9 @@ try {
 } catch (PDOException $e) {
     die("Error de conexión: " . $e->getMessage());
 }
+<<<<<<< HEAD
 ?>
+=======
+
+?>
+>>>>>>> origin/monica
