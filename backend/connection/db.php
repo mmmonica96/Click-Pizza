@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 ?>
 =======
 $host = 'localhost';
-$dbname = 'click&pizza'; // o click_pizza si no permite &
+$dbname = 'clickpizza'; // o click_pizza si no permite &
 $username = 'root';
 $password = '';
 
