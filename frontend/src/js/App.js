@@ -11,8 +11,9 @@ import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
 import Home from "./init";
-import Contact from "./contacto";
 import Login from "./login";
+import Contact from "./contacto";
+
 function App() {
   return (
     <div className="App">
@@ -35,6 +36,7 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contacto" element={<Contact />} />
+        <Route path="/register" element={<RegisterForm />} />
       </Routes>
 
       <div className="Footer">

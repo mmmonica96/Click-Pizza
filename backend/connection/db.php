@@ -1,5 +1,4 @@
 <?php
-
 $host = 'localhost';
 $dbname = 'clickpizza';
 $username = 'root';
