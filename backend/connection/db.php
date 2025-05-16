@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -20,10 +20,10 @@ $username = 'root';
 $password = '';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+die("Error de conexión: " . $e->getMessage());
 }
 ?>
 >>>>>>> origin/maria
