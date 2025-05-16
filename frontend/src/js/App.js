@@ -5,7 +5,7 @@ import "../css/app.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
 import PizzaApp from "./comidas/pizza";
-import Footer from "./components/footer";
+//import Footer fom "./components/footer";
 import RegisterForm from "./register/registerform";
 import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
@@ -13,7 +13,6 @@ import PostreApp from "./comidas/postres";
 import Home from "./init";
 import Login from "./login";
 import Contact from "./contacto";
-
 function App() {
   return (
     <div className="App">
@@ -37,6 +36,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="/contacto" element={<Contact />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contacto" element={<Contact />} />
       </Routes>
 
       <div className="Footer">
