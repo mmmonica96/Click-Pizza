@@ -1,16 +1,14 @@
 <?php
-// Mostrar errores en desarrollo
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// CORS headers
+//CORS
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
-// Preflight OPTIONS
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
@@ -31,17 +29,14 @@ if (!$pdo) {
 }
 
 //read raw JSON input from request body and decode into associative array
-// Leer y decodificar JSON
 $data = json_decode(file_get_contents("php://input"), true);
 
 //extract values or assign empty string if they don't exist
-// Extraer campos
 $name = $data['name'] ?? '';
 $email = $data['email'] ?? '';
 $message = $data['message'] ?? '';
 
 //validate required fields; if any are empty, return error response and exit
-// Validación
 if (empty($name) || empty($email) || empty($message)) {
     echo json_encode(["success" => false, "message" => "Todos los campos son requeridos"]);
     exit();
