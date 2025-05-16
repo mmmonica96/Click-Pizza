@@ -33,22 +33,18 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 //extract values or assign empty string if they don't exist
 
-// Leer y decodificar JSON
 $data = json_decode(file_get_contents("php://input"), true);
 
-// Extraer campos
 $name = $data['name'] ?? '';
 $email = $data['email'] ?? '';
 $message = $data['message'] ?? '';
 
 //validate required fields; if any are empty, return error response and exit
-// Validación
 if (empty($name) || empty($email) || empty($message)) {
     echo json_encode(["success" => false, "message" => "Todos los campos son requeridos"]);
     exit();
 }
 
-// Inserción
 try {
     $stmt = $pdo->prepare("INSERT INTO contact (name, email, message, date) VALUES (?, ?, ?, NOW())");
     $stmt->execute([$name, $email, $message]);
