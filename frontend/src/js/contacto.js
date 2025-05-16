@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import '../css/contacto.css'; 
+import { useState } from "react";
+import "../css/contacto.css";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    comentario: '',
+    nombre: "",
+    email: "",
+    comentario: "",
   });
 
   const [enviado, setEnviado] = useState(false);
@@ -17,18 +17,48 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Formulario enviado:', formData);
-    setEnviado(true);
-    setFormData({ nombre: '', email: '', comentario: '' });
+    console.log("Formulario enviado:", formData);
+
+    try {
+      const response = await fetch(
+        "http://localhost/click-pizza/backend/php/contact.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.nombre,
+            email: formData.email,
+            message: formData.comentario,
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log("Respuesta del servidor:", data);
+
+      if (data.success) {
+        setEnviado(true);
+        setFormData({ nombre: "", email: "", comentario: "" });
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      alert("Error de conexión con el servidor");
+    }
   };
 
   return (
     <div className="OpinionForm-App">
       <main className="opinion-container">
         <form onSubmit={handleSubmit} className="form-card">
-          <h2 className="text-2xl font-bold mb-4 text-orange-600">Déjanos tu opinión</h2>
+          <h2 className="text-2xl font-bold mb-4 text-orange-600">
+            Déjanos tu opinión
+          </h2>
 
           <label>Nombre</label>
           <input
@@ -59,7 +89,9 @@ export default function Contact() {
 
           <button type="submit">Enviar Opinión</button>
 
-          {enviado && <p className="success-message">¡Gracias por tu opinión!</p>}
+          {enviado && (
+            <p className="success-message">¡Gracias por tu opinión!</p>
+          )}
         </form>
       </main>
 
