@@ -12,6 +12,7 @@ import PastaApp from "./comidas/pasta";
 import PostreApp from "./comidas/postres";
 import Home from "./init";
 import Contact from "./contacto";
+import Login from "./login";
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
         <Route path="/pasta" element={<PastaApp />} />
         <Route path="/postres" element={<PostreApp />} />
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/contacto" element={<Contact />} />
       </Routes>
 
