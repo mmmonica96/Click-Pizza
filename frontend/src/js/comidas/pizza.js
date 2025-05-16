@@ -16,7 +16,7 @@ export default function PizzaApp() {
 
   const addToCart = (pizza) => {
     setCart([...cart, pizza]);
-    alert(`${pizza.nombre} ¡añadida al carrito!`);
+    alert(`${pizza.name} ¡añadida al carrito!`);
   };
 
   return (

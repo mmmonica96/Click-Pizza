@@ -15,7 +15,7 @@ export default function PastaApp() {
 
   const addToCart = (producto) => {
     setCart([...cart, producto]);
-    alert(`${producto.nombre} ¡añadida al carrito!`);
+    alert(`${producto.name} ¡añadida al carrito!`);
   };
 
   return (
