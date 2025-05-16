@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/monica
 $host = 'localhost';
 $dbname = 'clickpizza';
 $username = 'root';
@@ -14,9 +10,5 @@ try {
 } catch (PDOException $e) {
     die("Error de conexión: " . $e->getMessage());
 }
-<<<<<<< HEAD
-?>
-=======
 
 ?>
->>>>>>> origin/monica

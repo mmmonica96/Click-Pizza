@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../css/login/login.css'; 
+import '../css/login/login.css';
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -8,6 +8,8 @@ export default function Login() {
   });
 
   const [enviado, setEnviado] = useState(false);
+  const [error, setError] = useState(null);
+  const [usuario, setUsuario] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -16,11 +18,34 @@ export default function Login() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Inicio de sesión:', formData);
-    setEnviado(true);
-    setFormData({ email: '', password: '' });
+    setError(null);
+    setEnviado(false);
+
+    try {
+      const response = await fetch("http://localhost/Click-Pizza/backend/php/login.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      console.log("Respuesta del servidor:", result);
+
+      if (result.success) {
+        setUsuario(result.user);
+        setEnviado(true);
+        setFormData({ email: '', password: '' });
+      } else {
+        setError(result.message || "Error en el inicio de sesión");
+      }
+    } catch (err) {
+      console.error("Error en la solicitud:", err);
+      setError("No se pudo conectar con el servidor");
+    }
   };
 
   return (
@@ -51,7 +76,12 @@ export default function Login() {
 
           <button type="submit">Entrar</button>
 
-          {enviado && <p className="success-message">¡Inicio de sesión exitoso!</p>}
+          {enviado && usuario && (
+            <p className="success-message">¡Bienvenido/a, {usuario.name}!</p>
+          )}
+          {error && (
+            <p className="error-message">{error}</p>
+          )}
         </form>
       </main>
     </div>
