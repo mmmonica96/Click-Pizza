@@ -9,25 +9,11 @@
 /* Left sidebar */
 .sidebar {
   width: 220px;
-  background-color: #faf2a1;
+  background-color: rgba(253, 245, 172, 0.795);
   padding: 0;
   text-align: center;
 }
 
-/* Logo section */
-.logo-container {
-  background-color: white;
-  padding: 20px 10px;
-  border: 3px solid #009fe3;
-  margin: 0;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
-}
 
 /* Vertical menu links */
 .menu-categories {
@@ -64,58 +50,16 @@
   margin-bottom: 10px;
 }
 
-/* Navigation links and cart button */
-.topbar-menu {
-  background-image: url('/img/pizzas-banner.jpg'); /* Banner image */
-  background-size: cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
-}
-
-.topbar-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.topbar-menu li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-/* Shopping cart section */
-.cart {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.cart img {
-  width: 25px;
-  height: auto;
-}
-
-.cart button {
-  background-color: #de8634;
-  color: white;
-  font-weight: bold;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
 
 /* Combo cards display */
 .combos-container {
   display: flex;
+    align-items: center;
+margin-right: 700px; 
+  max-width: 700px; 
   gap: 40px;
-  justify-content: center;
-  margin-top: 40px;
+    border: 1px dashed red;
+
 }
 
 /* Individual combo card */
