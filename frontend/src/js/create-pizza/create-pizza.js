@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import '../../css/create-pizza/pizzabuilder.css';
+import "../../css/create-pizza/pizzabuilder.css";
 
 const ingredients = [
   { name: "Pepperoni", img: "/img/ingredientes/peperoni.png" },
@@ -23,7 +23,7 @@ export default function PizzaBuilder() {
 
   return (
     <div className="pizza-builder">
-      <h1 className="title">Crea tu Pizza</h1>
+      <h1 className="title">Crea tu pizza</h1>
 
       <div className="pizza-container">
         <img
@@ -31,19 +31,19 @@ export default function PizzaBuilder() {
           alt="Pizza base"
           className="pizza-base"
         />
-       {selectedIngredients.map((name) => {
-  const ing = ingredients.find((i) => i.name === name);
-  return (
-    <motion.img
-      key={name}
-      src={ing.img}
-      alt={name}
-      className="ingredient"
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-    />
-  );
-})}
+        {selectedIngredients.map((name) => {
+          const ing = ingredients.find((i) => i.name === name);
+          return (
+            <motion.img
+              key={name}
+              src={ing.img}
+              alt={name}
+              className="ingredient"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+            />
+          );
+        })}
       </div>
 
       <div className="ingredients-selector">
