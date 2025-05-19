@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import "../../css/comidas.css";
+import "../../css/cart.css";
 
 export default function PizzaApp() {
   const [cart, setCart] = useState([]);
@@ -8,7 +9,7 @@ export default function PizzaApp() {
   const [selectedPizzaForIngredients, setSelectedPizzaForIngredients] =
     useState(null);
   const [extraIngredients, setExtraIngredients] = useState([]);
-  //fetch pizzas
+  //fetch
   useEffect(() => {
     fetch(
       "http://localhost/Click-Pizza/backend/connection/controller.php?action=getPizzas"
@@ -17,7 +18,24 @@ export default function PizzaApp() {
       .then((data) => setPizzas(data))
       .catch((err) => console.error("Error al cargar pizzas:", err));
   }, []);
-  //ingredients
+  <ul className="ingredientes-lista">
+    {availableIngredients.map((ingredient) => (
+      <li key={ingredient.id} className="ingrediente-item">
+        <label className="ingrediente-label">
+          <input
+            type="checkbox"
+            checked={extraIngredients.some((i) => i.id === ingredient.id)}
+            onChange={() => toggleIngredient(ingredient)}
+            className="ingrediente-checkbox"
+          />
+          <span className="ingrediente-nombre">
+            {ingredient.name} (+{ingredient.price.toFixed(2)} €)
+          </span>
+        </label>
+      </li>
+    ))}
+  </ul>;
+
   const availableIngredients = [
     { id: 1, name: "Queso extra", price: 1.5 },
     { id: 2, name: "Jamón", price: 2.0 },
@@ -37,7 +55,7 @@ export default function PizzaApp() {
   const addToCart = (pizza, extras = []) => {
     const extrasNames = extras.map((e) => e.name).join(", ");
     const extrasPrice = extras.reduce((sum, e) => sum + e.price, 0);
-
+    //...is a js operator in which all properties are included.
     const pizzaWithExtras = {
       ...pizza,
       name: extras.length ? `${pizza.name} (+${extrasNames})` : pizza.name,
@@ -47,9 +65,10 @@ export default function PizzaApp() {
 
     const updatedCart = [...cart, pizzaWithExtras];
     setCart(updatedCart);
+    localStorage.setItem("pizzaCart", JSON.stringify(updatedCart));
     alert(`${pizzaWithExtras.name} ¡añadida al carrito!`);
   };
-  //when the user clicks on add ingredients, a modal will appear
+  //selected pizz for ingredients
   const handleAddIngredientsClick = (pizza) => {
     setSelectedPizzaForIngredients(pizza);
     setExtraIngredients([]);
@@ -62,17 +81,17 @@ export default function PizzaApp() {
       setExtraIngredients([]);
     }
   };
-  //empty cart if you do not add ingredients
+  //save order
   const handleSaveOrder = async () => {
     if (cart.length === 0) {
       alert("El carrito está vacío.");
       return;
     }
-    //calculate the total
+
     const total = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
 
     try {
-      const res = await fetch(
+      const response = await fetch(
         "http://localhost/Click-Pizza/backend/connection/controller.php?action=saveOrder",
         {
           method: "POST",
@@ -83,19 +102,21 @@ export default function PizzaApp() {
         }
       );
 
-      const data = await res.json();
+      const data = await response.json();
+
       if (data.status === "success") {
         alert("Pedido guardado con éxito");
         setCart([]);
+        localStorage.removeItem("pizzaCart");
       } else {
-        alert("Error: " + data.message);
+        alert("Error al guardar el pedido: " + data.message);
       }
     } catch (error) {
-      console.error("Error al guardar pedido:", error);
-      alert("Error al enviar el pedido.");
+      console.error("Error al guardar el pedido:", error);
+      alert("No se pudo guardar el pedido.");
     }
   };
-  //displays the image and name of the pizza and the price
+  //map allows you to scroll through the pizza toppings
   return (
     <div className="comida-container">
       {pizzas.map((pizza) => (
@@ -141,7 +162,7 @@ export default function PizzaApp() {
           </div>
         </div>
       ))}
-
+      {/* modal for adding ingredients */}
       {selectedPizzaForIngredients && (
         <div
           className="modal-ingredients"
@@ -186,8 +207,8 @@ export default function PizzaApp() {
 
       {cart.length > 0 && (
         <div className="finalizar-pedido">
-          <h4>Productos en carrito: {cart.length}</h4>
-          <button onClick={handleSaveOrder} className="btn btn-confirm">
+          <h4>Productos en el carrito: {cart.length}</h4>
+          <button className="btn btn-confirm" onClick={handleSaveOrder}>
             Finalizar pedido
           </button>
         </div>
