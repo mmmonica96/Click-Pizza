@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "./PizzaBuilder.css";
+import '../../css/create-pizza/pizzabuilder.css';
 
 const ingredients = [
-  { name: "Pepperoni", img: "/images/pepperoni.png" },
-  { name: "Champiñones", img: "/images/mushroom.png" },
-  { name: "Pimiento", img: "/images/pepper.png" },
-  { name: "Aceitunas", img: "/images/olive.png" },
-  { name: "Queso extra", img: "/images/cheese.png" },
+  { name: "Pepperoni", img: "/img/ingredientes/peperoni.png" },
+  { name: "Champiñones", img: "/img/ingredientes/champiñones.png" },
+  { name: "Pimiento", img: "/img/ingredientes/pimientos.png" },
+  { name: "Aceitunas", img: "/img/ingredientes/aceitunas.png" },
+  { name: "Queso extra", img: "/img/ingredientes/queso.png" },
 ];
 
 export default function PizzaBuilder() {
@@ -27,24 +27,23 @@ export default function PizzaBuilder() {
 
       <div className="pizza-container">
         <img
-          src="/images/pizza-base.png"
+          src="/img/ingredientes/base-masa.png"
           alt="Pizza base"
           className="pizza-base"
         />
-        {selectedIngredients.map((name, index) => {
-          const ing = ingredients.find((i) => i.name === name);
-          return (
-            <motion.img
-              key={name}
-              src={ing.img}
-              alt={name}
-              className="ingredient"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              style={{ top: `${20 + index * 10}px`, left: `${20 + index * 10}px` }}
-            />
-          );
-        })}
+       {selectedIngredients.map((name) => {
+  const ing = ingredients.find((i) => i.name === name);
+  return (
+    <motion.img
+      key={name}
+      src={ing.img}
+      alt={name}
+      className="ingredient"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+    />
+  );
+})}
       </div>
 
       <div className="ingredients-selector">

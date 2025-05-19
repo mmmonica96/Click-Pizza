@@ -145,3 +145,33 @@ h3 {
   font-weight: 100;
   color: #ea580c; /* similar a text-orange-600 */
 }
+
+
+/*CENTER BUTTON (CREATE-PIZZA)*/
+.center-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.center-button {
+  background: linear-gradient(135deg, #ff9933, #ff5e62);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.center-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ff5e62, #ff9933);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}

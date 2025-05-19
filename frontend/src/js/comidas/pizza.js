@@ -96,8 +96,16 @@ export default function PizzaApp() {
     }
   };
   //displays the image and name of the pizza and the price
-  return (
+   return (
+        <>
+    <div className="center-button-container">
+      <a href="/crear-pizza" className="center-button">
+        Crea tu pizza 🍕
+      </a>
+    </div>
+
     <div className="comida-container">
+  
       {pizzas.map((pizza) => (
         <div
           key={pizza.id}
@@ -193,5 +201,6 @@ export default function PizzaApp() {
         </div>
       )}
     </div>
+    </>
   );
 }

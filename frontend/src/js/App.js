@@ -14,6 +14,7 @@ import Home from "./init";
 import Login from "./login";
 import Contact from "./contacto";
 import CartModal from "./components/cartModal";
+import PizzaBuilder from "./create-pizza/create-pizza";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
         <Route path="/contacto" element={<Contact />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/cart" element={<CartModal />} />
+        <Route path="/crear-pizza" element={<PizzaBuilder />} />
+
       </Routes>
 
       <div className="Footer">
