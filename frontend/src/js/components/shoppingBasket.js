@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import "../../css/comidas.css"; // Reutiliza el mismo estilo
+import "../../css/comidas.css";
 
 export default function ShoppingBasket() {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const storedCart = JSON.parse(localStorage.getItem("pizzaCart")) || [];
     setCart(storedCart);
     const totalPrice = storedCart.reduce((sum, item) => sum + parseFloat(item.price), 0);
     setTotal(totalPrice.toFixed(2));
@@ -31,7 +31,7 @@ export default function ShoppingBasket() {
       const result = await response.json();
       if (result.success) {
         alert("¡Pedido confirmado!");
-        localStorage.removeItem("cart");
+        localStorage.removeItem("pizzaCart");
         setCart([]);
         setTotal(0);
       } else {
@@ -52,7 +52,7 @@ export default function ShoppingBasket() {
       {cart.map((item, index) => (
         <div key={index} className="pizza-card p-4 flex flex-col items-center">
           <img
-            src={item.img ? `/img/pizzas/${item.img}` : "/img/pizzas/default.png"}
+            src={item.img ? `/img/${item.type || "pizzas"}/${item.img}` : "/img/pizzas/default.png"}
             alt={item.name}
             className="imagen-pizza"
           />

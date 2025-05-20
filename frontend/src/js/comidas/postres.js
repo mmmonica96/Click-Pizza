@@ -10,9 +10,7 @@ export default function PostreApp() {
   const [extraToppins, setExtraToppins] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "http://localhost/Click-Pizza/backend/connection/controller.php?action=getPostres"
-    )
+    fetch("http://localhost/Click-Pizza/backend/connection/controller.php?action=getPostres")
       .then((res) => res.json())
       .then((data) => setPostre(data))
       .catch((err) => console.error("Error al cargar postres:", err));
@@ -44,10 +42,10 @@ export default function PostreApp() {
       type: "postre",
     };
 
-    const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const currentCart = JSON.parse(localStorage.getItem("pizzaCart")) || [];
     const updatedCart = [...currentCart, postreWithExtras];
 
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    localStorage.setItem("pizzaCart", JSON.stringify(updatedCart));
     setCart(updatedCart);
 
     alert(`${postreWithExtras.name} ¡añadida al carrito!`);
@@ -69,19 +67,14 @@ export default function PostreApp() {
   return (
     <div className="comida-container">
       {Postre.map((postre) => (
-        <div
-          key={postre.id}
-          className="pizza-card p-4 flex flex-col items-center"
-        >
+        <div key={postre.id} className="pizza-card p-4 flex flex-col items-center">
           <img
             src={`/img/postres/${postre.img}`}
             alt={postre.name}
             className="imagen-postre"
           />
           <span className="pizza-name mb-2 text-center">{postre.name}</span>
-          <span className="precio-texto">
-            {Number(postre.price).toFixed(2)} €
-          </span>
+          <span className="precio-texto">{Number(postre.price).toFixed(2)} €</span>
 
           <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
             <button onClick={() => addToCart(postre)} className="btn btn-order">
@@ -102,9 +95,7 @@ export default function PostreApp() {
                 <Star
                   key={star}
                   size={16}
-                  className={
-                    star <= (postre.rating || 0) ? "star-filled" : "star-empty"
-                  }
+                  className={star <= (postre.rating || 0) ? "star-filled" : "star-empty"}
                 />
               ))}
             </div>
@@ -113,15 +104,9 @@ export default function PostreApp() {
       ))}
 
       {selectedPostreForToppins && (
-        <div
-          className="modal-ingredients"
-          onClick={() => setSelectedPostreForToppins(null)}
-        >
-          <div
-            className="modal-ingredients-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3>Añadir ingredientes a {selectedPostreForToppins.name}</h3>
+        <div className="modal-ingredients" onClick={() => setSelectedPostreForToppins(null)}>
+          <div className="modal-ingredients-content" onClick={(e) => e.stopPropagation()}>
+            <h3>Añadir toppings a {selectedPostreForToppins.name}</h3>
             <ul>
               {availableToppins.map((toppins) => (
                 <li key={toppins.id}>
@@ -139,10 +124,7 @@ export default function PostreApp() {
             <button onClick={handleConfirmToppins} className="btn btn-confirm">
               Añadir al carrito
             </button>
-            <button
-              onClick={() => setSelectedPostreForToppins(null)}
-              className="btn btn-cancel"
-            >
+            <button onClick={() => setSelectedPostreForToppins(null)} className="btn btn-cancel">
               Cancelar
             </button>
           </div>
