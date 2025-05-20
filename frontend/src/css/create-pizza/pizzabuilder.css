@@ -62,3 +62,18 @@
   background-color: #34d399;
   color: white;
 }
+
+.base-button.selected,
+.ingredient-button.selected {
+  background-color: #ffcc00;
+  font-weight: bold;
+}
+
+.base-button,
+.ingredient-button {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
