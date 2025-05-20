@@ -6,52 +6,52 @@ const combos = [
   {
     name: 'Margarita Clásica',
     price: '€12.99',
-    img: 'img/pizza-margarita.jpg',
+    img: 'img/pizzas/pizza_margarita.jpg',
   },
   {
     name: 'Pepperoni Explosion',
     price: '€14.99',
-    img: 'img/pizza-de-peperoni.webp',
+    img: 'img/pizzas/pizza-de-peperoni.jpg',
   },
   {
     name: 'Hawaiana Tropical',
     price: '€13.99',
-    img: 'img/a17cd68660e0-pizza-hawaiana-t.avif',
+    img: 'img/pizzas/hawaiana.jpg',
   },
   {
     name: 'BBQ Deluxe',
     price: '€15.99',
-    img: 'img/Cecofry_Pizza_Barbacoa_RRSS.jpg',
+    img: 'img/pizzas/pizza_barbacoa.jpg',
   },
   {
     name: 'Vegetariana Garden',
     price: '€13.49',
-    img: 'img/Pizza-Veggie-Supreme-blog.webp',
+    img: 'img/pizzas/Pizza_vegetariana.jpg',
   },
   {
     name: 'Cuatro Quesos',
     price: '€14.49',
-    img: 'img/4 quesos.jpg',
+    img: 'img/pizzas/pizza-4-quesos.jpg',
   },
   {
     name: 'Carbonara Special',
     price: '€15.49',
-    img: 'img/carbonara.jpg',
+    img:'img/pizzas/carbonara.jpg',
   },
   {
     name: 'Diavola Picante',
     price: '€14.99',
-    img: 'img/diavola.jpg',
+    img: 'img/pizzas/diavola.jpg',
   },
   {
     name: 'Truffle Elegance',
     price: '€16.99',
-    img: 'img/Truffle Elegance.webp',
+    img: 'img/pizzas/TruffleElegance.jpg',
   },
   {
     name: 'Marinara Fresca',
     price: '€13.99',
-    img: 'img/Marinara Fresca.jpg',
+    img: 'img/pizzas/MarinaraFresca.jpg',
   },
 ];
 
