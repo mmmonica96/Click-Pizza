@@ -5,7 +5,7 @@ import "../css/app.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
 import PizzaApp from "./comidas/pizza";
-//import Footer fom "./components/footer";
+import Footer from "./components/footer";
 import RegisterForm from "./register/registerform";
 import EntrantesApp from "./comidas/entrantes";
 import PastaApp from "./comidas/pasta";
@@ -36,10 +36,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/contacto" element={<Contact />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/contacto" element={<Contact />} />
       </Routes>
 
       <div className="Footer">
