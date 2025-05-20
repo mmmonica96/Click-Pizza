@@ -39,16 +39,9 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contacto" element={<Contact />} />
-        <Route path="/register" element={<RegisterForm />} />
-<<<<<<< HEAD
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<Login />} />
-=======
         <Route path="/cart" element={<CartModal />} />
         <Route path="/crear-pizza" element={<PizzaBuilder />} />
         <Route path="/menus" element={<Menus />} />
-
->>>>>>> origin/carmen
       </Routes>
 
       <div className="Footer">
