@@ -15,6 +15,7 @@ import Login from "./login";
 import Contact from "./contacto";
 import CartModal from "./components/cartModal";
 import PizzaBuilder from "./create-pizza/create-pizza";
+import ShoppingBasket from "./components/shoppingBasket";
 import Menus from "./main";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/cart" element={<CartModal />} />
         <Route path="/crear-pizza" element={<PizzaBuilder />} />
         <Route path="/menus" element={<Menus />} />
+        <Route path="/carrito" element={<ShoppingBasket />} />
       </Routes>
 
       <div className="Footer">

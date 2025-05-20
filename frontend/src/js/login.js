@@ -37,6 +37,8 @@ export default function Login() {
 
       if (result.success) {
         setUsuario(result.user);
+        localStorage.setItem("user", JSON.stringify(result.user)); // ✅ guardamos toda la info
+        localStorage.setItem("user_id", result.user.id); // también como ID separado si lo necesitas
         setEnviado(true);
         setFormData({ email: '', password: '' });
       } else {
