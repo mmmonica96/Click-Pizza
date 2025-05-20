@@ -1,0 +1,14 @@
+{
+  "ingredients": [
+    { "name": "Pepperoni", "img": "/img/ingredientes/peperoni.png", "price": 1.5 },
+    { "name": "Champiñones", "img": "/img/ingredientes/champiñones.png", "price": 1.2 },
+    { "name": "Pimiento", "img": "/img/ingredientes/pimientos.png", "price": 1.0 },
+    { "name": "Aceitunas", "img": "/img/ingredientes/aceitunas.png", "price": 1.0 },
+    { "name": "Queso extra", "img": "/img/ingredientes/queso.png", "price": 1.8 }
+  ],
+  "bases": [
+    { "name": "Tomate", "price": 1.0 },
+    { "name": "Nata", "price": 1.2 },
+    { "name": "Base de queso", "price": 1.5 }
+  ]
+}
