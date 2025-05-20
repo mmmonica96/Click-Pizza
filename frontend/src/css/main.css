@@ -1,0 +1,88 @@
+/* General layout container */
+.menus-container {
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-color: #fdf9f2;
+  height: 100vh;
+}
+
+/* Left sidebar */
+.sidebar {
+  width: 220px;
+  background-color: rgba(253, 245, 172, 0.795);
+  padding: 0;
+  text-align: center;
+}
+
+
+/* Vertical menu links */
+.menu-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.menu-categories a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+/* Main content on the right */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Top bar with navigation and cart */
+.topbar {
+  background-color: white;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* Title in the topbar */
+.topbar-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/* Combo cards display */
+.combos-container {
+  display: flex;
+    align-items: center;
+margin-right: 700px; 
+  max-width: 700px; 
+  gap: 40px;
+    border: 1px dashed red;
+
+}
+
+/* Individual combo card */
+.combo-card {
+  background-color: #fffcb4;
+  width: 160px;
+  height: 160px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.combo-card p {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.combo-card button {
+  background-color: #de8634;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+}

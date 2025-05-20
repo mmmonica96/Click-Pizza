@@ -2,48 +2,43 @@ import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import "../../css/comidas.css";
 
-export default function PostreApp() {
+export default function PizzaApp() {
   const [cart, setCart] = useState([]);
-  const [postres, setPostres] = useState([]);
+  const [pizzas, setPizzas] = useState([]);
 
+  // Cargar pizzas desde el backend
   useEffect(() => {
-    fetch("http://localhost/Click-Pizza/backend/connection/controller.php?action=getPostres")
+    fetch("http://localhost/Click-Pizza/backend/connection/controller.php?action=getPizzas")
       .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setPostres(data);
-        } else {
-          console.error("Respuesta inesperada:", data);
-        }
-      })
-      .catch((err) => console.error("Error al cargar postres:", err));
+      .then((data) => setPizzas(data))
+      .catch((err) => console.error("Error al cargar pizzas:", err));
   }, []);
 
-  const addToCart = (producto) => {
-    setCart([...cart, producto]);
-    alert(`${producto.name} ¡añadido al carrito!`);
+  const addToCart = (pizza) => {
+    setCart([...cart, pizza]);
+    alert(`${pizza.name} ¡añadida al carrito!`);
   };
 
   return (
     <div className="comida-container">
-      {postres.map((producto) => (
-        <div key={producto.id} className="pizza-card p-4 flex flex-col items-center">
+      {pizzas.map((pizza) => (
+        <div key={pizza.id} className="pizza-card p-4 flex flex-col items-center">
           <img
-            src={`/img/postres/${producto.img}`}
-            alt={producto.name}
+            src={`/img/pizzas/${pizza.img}`}
+            alt={pizza.name}
             className="imagen-pizza"
           />
-          <span className="pizza-name mb-2 text-center">{producto.name}</span>
+          <span className="pizza-name mb-2 text-center">{pizza.name}</span>
 
            {/* Precio */}
           <span className="precio-texto">
-            {Number(producto.price).toFixed(2)} €
+            {Number(pizza.price).toFixed(2)} €
           </span>
 
 
           <div className="w-full flex flex-col gap-2 md:flex-row md:justify-between">
             <button
-              onClick={() => addToCart(producto)}
+              onClick={() => addToCart(pizza)}
               className="btn btn-order"
             >
               Pedir
@@ -61,7 +56,7 @@ export default function PostreApp() {
                 <Star
                   key={star}
                   size={16}
-                  className={star <= (producto.rating || 0) ? "star-filled" : "star-empty"}
+                  className={star <= (pizza.rating || 0) ? "star-filled" : "star-empty"}
                 />
               ))}
             </div>

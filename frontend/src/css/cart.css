@@ -1,0 +1,97 @@
+/*styles cart*/
+.modal-cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.modal-ingredients-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/*styles content*/
+.modal-content {
+  background: black;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 400px;
+}
+/*styles btn cart*/
+.btn-cart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff6347;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  z-index: 11;
+}
+/*styles ingredients*/
+.modal-ingredients {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+/*styles modal*/
+.modal-ingredients-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: black;
+}
+/*container*/
+.cart-container {
+  font-size: 15px;
+}
+.ingredientes-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingrediente-item {
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.ingrediente-item:hover {
+  background-color: #ececec;
+}
+
+.ingrediente-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ingrediente-checkbox {
+  transform: scale(1.2);
+  accent-color: #ff6600;
+}
+
+.ingrediente-nombre {
+  font-weight: 500;
+  color: #333;
+}
