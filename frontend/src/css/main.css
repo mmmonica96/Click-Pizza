@@ -1,87 +1,127 @@
-/* General layout container */
-.menus-container {
-  display: flex;
-  font-family: Arial, sans-serif;
-  background-color: #fdf9f2;
-  height: 100vh;
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
 }
-
-/* Left sidebar */
+        
+   
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+        
+        
 .sidebar {
-  width: 220px;
-  background-color: rgba(253, 245, 172, 0.795);
-  padding: 0;
-  text-align: center;
+  width: 200px;
+  background-color: rgba(255, 244, 148, 0.795); 
+  padding: 25px 0;
 }
-
-
-/* Vertical menu links */
+        
+.category-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 15px;
+}
+        
 .menu-categories {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+           
 }
-
+        
 .menu-categories a {
+  color: #000000;
   text-decoration: none;
-  color: #000;
-  font-size: 18px;
-}
-
-/* Main content on the right */
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-/* Top bar with navigation and cart */
-.topbar {
-  background-color: white;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-}
-
-/* Title in the topbar */
-.topbar-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-
-/* Combo cards display */
-.combos-container {
-  display: flex;
-    align-items: center;
-margin-right: 700px; 
-  max-width: 700px; 
-  gap: 40px;
-
-}
-
-/* Individual combo card */
-.combo-card {
-  background-color: #fffcb4;
-  width: 160px;
-  height: 160px;
-  text-align: center;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.combo-card p {
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.combo-card button {
-  background-color: #de8634;
-  color: white;
-  border: none;
-  padding: 8px 16px;
   font-size: 16px;
-  cursor: pointer;
-  border-radius: 3px;
+   padding: 12px 20px;
+  transition: all 0.3s;
+}
+        
+.menu-categories a:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+        
+       
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f8f8f8;
+}
+        
+.page-title {
+     font-size: 28px;
+    color: #e74c3c;
+   margin-bottom: 25px;
+   padding-bottom: 10px;
+    border-bottom: 2px solid #e74c3c;
+}
+        
+.combos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+}
+        
+.combo-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+   transition: transform 0.3s;
+}
+        
+.combo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+        
+.combo-image {
+    height: 150px;
+    overflow: hidden;
+}
+        
+.combo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        
+.combo-info {
+    padding: 15px;
+    text-align: center;
+}
+        
+.combo-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+        
+.combo-price {
+     color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+        
+.order-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+     font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    width: 100%;
+}
+        
+.order-btn:hover {
+    background-color: #c0392b;
 }
