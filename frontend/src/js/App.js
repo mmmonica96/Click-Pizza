@@ -13,7 +13,6 @@ import PostreApp from "./comidas/postres";
 import Home from "./init";
 import Login from "./login";
 import Contact from "./contacto";
-import CartModal from "./components/cartModal";
 import PizzaBuilder from "./create-pizza/create-pizza";
 import Menus from "./main";
 
@@ -39,7 +38,6 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contacto" element={<Contact />} />
-        <Route path="/cart" element={<CartModal />} />
         <Route path="/crear-pizza" element={<PizzaBuilder />} />
         <Route path="/menus" element={<Menus />} />
       </Routes>
