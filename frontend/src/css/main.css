@@ -7,7 +7,6 @@ body {
         
 .container {
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
 }
         
@@ -21,10 +20,10 @@ body {
         
 .page-title {
     font-size: 28px;
-    color: #e74c3c;
+    color: #e7a33c;
     margin-bottom: 25px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #e74c3c;
+    border-bottom: 2px solid #e7a33c;
     text-align: center;
 }
         
@@ -72,13 +71,13 @@ body {
 }
         
 .combo-price {
-    color: #e74c3c;
+    color: #e79d3c;
     font-weight: bold;
     margin-bottom: 15px;
 }
         
 .order-btn {
-    background-color: #e74c3c;
+    background-color: #e7bf3c;
     color: white;
     border: none;
     padding: 8px 20px;
@@ -91,23 +90,6 @@ body {
 }
         
 .order-btn:hover {
-    background-color: #c0392b;
+    background-color: #c0982b;
 }
 
-.site-footer {
-    background-color: #e74c3c;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-}
-
-.site-footer p {
-    margin: 0;
-    font-size: 14px;
-}

@@ -19,7 +19,7 @@ import Menus from "./main";
 
 function App() {
   return (
-    <div className="App">
+    <div className="page-wrapper">
       <header className="App-header">
         <div className="logo-banner-container">
           <Link to="/pizza">
@@ -30,25 +30,26 @@ function App() {
         <Navbar />
       </header>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/pizza" element={<PizzaApp />} />
-        <Route path="/entrantes" element={<EntrantesApp />} />
-        <Route path="/pasta" element={<PastaApp />} />
-        <Route path="/postres" element={<PostreApp />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/contacto" element={<Contact />} />
-        <Route path="/crear-pizza" element={<PizzaBuilder />} />
-        <Route path="/menus" element={<Menus />} />
-        <Route path="/carrito" element={<ShoppingBasket />} />
-      </Routes>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pizza" element={<PizzaApp />} />
+          <Route path="/entrantes" element={<EntrantesApp />} />
+          <Route path="/pasta" element={<PastaApp />} />
+          <Route path="/postres" element={<PostreApp />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="/crear-pizza" element={<PizzaBuilder />} />
+          <Route path="/menus" element={<Menus />} />
+          <Route path="/carrito" element={<ShoppingBasket />} />
+        </Routes>
+      </main>
 
-      <div className="Footer">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
+
 
 export default App;

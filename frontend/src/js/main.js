@@ -93,10 +93,6 @@ export default function Menus() {
           ))}
         </div>
 
-        {/* Footer ajustado */}
-        <footer className="site-footer">
-          <p>© 2023 Click & Pizza - Todos los derechos reservados</p>
-        </footer>
       </div>
     </div>
   );
