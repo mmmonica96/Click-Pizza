@@ -78,7 +78,7 @@ body {
 }
         
 .order-btn {
-    background-color: #e74c3c;
+    background-color: rgba(255, 244, 148, 0.795);
     color: white;
     border: none;
     padding: 8px 20px;
