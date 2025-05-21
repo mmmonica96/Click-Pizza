@@ -27,6 +27,21 @@ export default function PizzaBuilder() {
     return (ingredientsTotal + basePrice).toFixed(2);
   };
 
+  const addToCart = () => {
+    if (!selectedBase) {
+      alert("Por favor, selecciona una base para tu pizza.");
+      return;
+    }
+    const pizza = {
+      base: selectedBase,
+      ingredients: selectedIngredients,
+      total: calculateTotal(),
+    };
+    // Aquí puedes enviar `pizza` a un contexto de carrito, una API, etc.
+    console.log("Pizza añadida al carrito:", pizza);
+    alert("¡Tu pizza ha sido añadida al carrito!");
+  };
+
   return (
     <div className="pizza-builder">
       <h1 className="title">Crea tu pizza</h1>
@@ -84,6 +99,12 @@ export default function PizzaBuilder() {
 
       <div className="total-price">
         <h2>Total: €{calculateTotal()}</h2>
+      </div>
+
+      <div className="add-to-cart">
+        <button className="add-to-cart-button" onClick={addToCart}>
+          Añadir al carrito
+        </button>
       </div>
     </div>
   );
